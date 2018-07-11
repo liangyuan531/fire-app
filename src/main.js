@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-// import VueFire from 'vuefire'
+import VueFire from 'vuefire'
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 
@@ -17,7 +17,7 @@ new Vue({
   template: '<App/>'
 })
 
-// Vue.use(VueFire)
+Vue.use(VueFire)
 firebase.initializeApp({
   apiKey: 'AIzaSyBnxzmatcKH2X3ytP0IM8kt8lSbFFGDBeI',
   authDomain: 'vuedemo-16bf5.firebaseapp.com',

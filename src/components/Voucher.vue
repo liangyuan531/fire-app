@@ -1,10 +1,11 @@
 <template>
   <div>
     <ul>
-      <li v-for="(item, idx) in items" :key="idx">
-        <button>
+      <li id="vouchers" v-for="(item, idx) in items" :key="idx">
+        <a @click="goPay">
           <img :src="item.url">
-        </button>
+          xx
+        </a>
       </li>
     </ul>
   </div>
@@ -13,7 +14,7 @@
 <script>
 import { db } from '../main'
 export default {
-  name: 'HelloWorld',
+  name: 'Voucher',
   data () {
     return {
       items: [],
@@ -43,22 +44,21 @@ export default {
       })
   },
   methods: {
+    goPay: function () {
+      this.$router.push({path: '/payment'})
+    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+#vouchers li{
+   float:left;
 }
 ul {
   list-style-type: none;
   padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
 }
 a {
   color: #42b983;
